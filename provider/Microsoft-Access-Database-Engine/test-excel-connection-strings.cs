@@ -6,7 +6,7 @@ using System.IO;
 class Program {
 
 
-   private static string[] connectionStrings = new string[] {
+   private static string[] connectionStringTemplates = new string[] {
 // ------------------------------------------------------------------------------------------
                                      @"Data Source=XLSXPATH"                                              , // ArgumentException: An OLE DB Provider was not specified in the ConnectionString.  An example would be, 'Provider=SQLOLEDB;'
    @"Provider=Microsoft.ACE.OLEDB.12.0;Data Source=XLSXPATH"                                              , // OleDbException: Unrecognized database format '….xlsx'
@@ -35,7 +35,7 @@ class Program {
 
       string xlsxPath = Directory.GetCurrentDirectory() + @"\" + "excelFile.xlsx";
 
-      foreach (string connectionStringTemplate in connectionStrings) {
+      foreach (string connectionStringTemplate in connectionStringTemplates) {
 
          string connectionString = connectionStringTemplate.Replace("XLSXPATH", xlsxPath);
          Console.WriteLine(connectionString);
