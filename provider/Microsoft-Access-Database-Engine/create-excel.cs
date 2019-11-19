@@ -18,9 +18,9 @@ public class CreateExcel {
 
       Console.WriteLine($"Using provider {provider}");
 
-      string connetionString = $"Provider={provider};Data Source={excelFilePath};Extended Properties='Excel 12.0 Xml;HDR=Yes';";
+      string connectionString = $"Provider={provider};Data Source={excelFilePath};Extended Properties='Excel 12.0 Xml;HDR=Yes';";
 
-      using (OleDbConnection connection = new OleDbConnection(connetionString)) {
+      using (OleDbConnection connection = new OleDbConnection(connectionString)) {
 
          connection.Open();
 
