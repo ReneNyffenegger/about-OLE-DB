@@ -1,11 +1,10 @@
 foreach ($provider in [System.Data.OleDb.OleDbEnumerator]::GetRootEnumerator()) {
 
-   write-output($provider['sources_name'       ]  + "`t" + 
-                $provider['sources_description']  + "`t" +
-                $provider['sources_clsid'      ]  + "`t" +
-   #            $provider['sources_parsename'  ]  + "`t" +
-                $provider['sources_type'       ]  + "`t" +
-                $provider['sources_isparent'   ] 
-   )
-
+   "{0,-30} {1,-55} {2} {3} {4,-30}" -f
+      $provider['sources_name'       ] ,
+      $provider['sources_description'] ,
+      $provider['sources_clsid'      ] ,
+    # $provider['sources_parsename'  ] ,
+      $provider['sources_type'       ] ,
+      $provider['sources_isparent'   ]
 }
